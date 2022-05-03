@@ -1,0 +1,779 @@
+/*
+ * Login:xjusti00
+ *
+ * Doplnte sve reseni.
+ *
+ * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
+ * a pro netrivialni useky kodu (napr. bubliny v sekci #refs)
+ */
+
+
+/*
+*    základní použité barvy:
+*    #898989: základní šedá
+*    #bfbfbf: světlejší šedá
+*    #4d4d4d: tmavší šedá
+*    #f7f7f7: nevýrazná
+*    black: výzazná
+*    white: výrazná inverzní
+*    steelblue: dekorace
+*/
+
+
+/* zakledne nastavenia */
+
+html{
+    min-width: 768px;
+}
+
+body{
+    margin: auto;
+    font-family: 'PT Sans';
+    align-items: center;
+    align-content: center;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+section{
+    padding: 60px 0px 80px 0px;
+}
+
+.content {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0px 20px 0px 20px;
+}
+
+i{
+    color: steelblue;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+/* header */
+/*
+#header (záhlaví)
+    výška: velikost viewportu, ale minimálně 400px
+    menu:
+        horní okraj: 10px
+    logo:
+        písmo: 25px
+        vzdálenost mezi položkami menu: 10px
+        navigace:
+        písmo 13px
+        mezera mezi písmeny: .05em
+    vycpávka: 5px vertikální a 15px horizontálně
+    rámeček: 1px
+    hlavní nadpis:
+        písmo: 64px, white
+        odsazení zespodu a zleva: 20px
+        tlačítko Get started:
+        větší písmo
+        vycpávka: 20px
+        rámeček: 2px
+    zaoblení: 15px
+hlavní nadpis spolu s tlačítkem umístěn v 2/3 záhlaví
+*/
+
+#header-title{
+  position: absolute;
+  top: 66%;
+  transform: translate( 0%, -66%);
+    letter-spacing: .05em;
+}
+
+#header-title h1{
+    color: white;
+    font-size: 64px;
+}
+
+#header-title a{
+    color: #f7f7f7;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px;
+    border-color: #4d4d4d;
+    color: #4d4d4d;
+    transition-duration: 0.5s;
+    
+}
+
+#header-title a:hover{
+    color: white;
+    background-color: steelblue;
+    border-color: steelblue;
+    transition-duration: 0.5s;
+}
+
+#header {
+    background-image: url(../img/header.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: 400px;  
+    
+}
+
+#header-menu{
+ display: grid;
+    grid-template-areas: "logo kontakty"
+    "menu ikony";
+    padding-top: 10px;
+}
+
+#contacts span,#contacts a{
+    color: #4d4d4d;
+    text-decoration: none;    
+}
+
+#contacts a:hover{
+    color: white;
+}
+
+#contacts a{
+    padding-left: 5px;
+}
+
+#contacts{
+    grid-area: kontakty;
+    text-align: right;
+    
+}
+
+#logo{
+    grid-area: logo;
+    font-size: 25px;
+}
+
+#logo a{
+    margin-left: 3px;
+}
+
+#logo a:hover{
+    color: white;
+}
+
+#networks{
+    grid-area: ikony;
+    text-align: right;
+    font-size: 25px;
+}
+
+#networks a{
+    padding-left: 5px;
+}
+
+#networks i:hover{
+    color: white;
+}
+
+#navigation{
+    grid-area: menu;
+}
+
+#navigation ul{
+    display: flex;
+    list-style: none;
+    padding: 0px;
+}
+
+#navigation ul li a {
+    display: block;
+    padding: 5px 15px 5px 15px;
+    color: #bfbfbf;
+    text-decoration: none;
+    
+}
+
+#navigation ul li{
+    border: solid 1px transparent;
+    transition-duration: 0.5s;
+}
+
+#navigation ul li:hover{
+    border: solid 1px #bfbfbf;
+    transition-duration: 0.5s;
+}
+
+#logo{
+    font-family: Special Elite;
+    float: left;
+    color: steelblue;
+}
+
+#logo a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+#contacts{
+    float: right;
+    
+}
+
+#phone{
+    padding-right: 10px
+}
+
+/* servises */
+/*
+    #services
+    šířka karty: 300px
+    mezera mezi kartami: 40px
+    rámeček s ikonou:
+        velikost: 50px
+    vycpávka: 5px
+    čára rámečku: 1px
+    implementujte styly tak, aby bylo možné přidat další elementy .services-column
+*/
+
+#services h2{
+    text-transform: uppercase;
+}
+
+#services p{
+    color: #898989;
+    margin: 0 15px 15px 15px; 
+}
+
+#services h3{
+    margin-bottom: 0;
+}
+
+#services{
+    text-align: center;
+}
+
+#services > div:first-child > h2 {
+    color: black;
+}
+
+#services > div:first-child > p {
+    color: #4d4d4d;
+    
+}
+
+
+.services-card{
+    
+    box-shadow: 0 0 10px 0 gray; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    color: black;
+    border-radius: 5px;
+}
+
+.services-card:hover{
+    box-shadow: 0 0 10px 0 steelblue; 
+    color: steelblue;
+}
+
+.services-card img:last-child{
+    display: none;
+}
+
+.services-card img{
+    width: 45px;
+    margin: 10px 5px 0px 5px;
+    padding: 5px;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+}
+
+
+.services-card img:first-child{
+    display: block;
+}
+
+.services-card:hover img:last-child{
+    display: block;
+    background-color: steelblue;
+}
+
+
+.services-card:hover img:first-child{
+    display: none;
+}
+
+
+#services > div:nth-child(odd) > div:nth-child(odd){
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 40px;
+    color: aqua;
+    justify-content: center;
+}
+
+/* about */
+/*
+#about
+    velikost obrázku: 40%, 50% (po najetí kurzoru)
+    mezera mezi obrázkem a odstavcem: 40px (vertikální), 80px (horizontálně)
+    implementujte styly tak, aby bylo možné přidat další elementy .about-item a obrázky se pozicovaly střídavě na levou a pravou stranu
+
+*/
+
+
+#about{
+    background-color: #f7f7f7;
+    
+}
+
+#about .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-item img{
+    width: 40%;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    
+}
+
+.about-item img:hover{
+    width: 50%;
+    transition-duration: 0.5s;
+}
+
+.about-item:nth-child(odd) img{
+    float: left;
+    margin-right: 80px;
+    transition-duration: 0.5s;
+}
+
+.about-item:nth-child(even) img{
+    float: right;
+    margin-left: 80px;
+    transition-duration: 0.5s;
+}
+
+.about-item p {
+    text-align: justify;
+    color: #898989;
+}
+
+/* team */
+/*
+    #team
+    karty mají stejnou šířku
+    mezera mezi kartami: 20px
+*/
+
+#team h2{
+    text-transform: uppercase;
+}
+
+#team .content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+}
+
+#team .content h2{
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.team-card img{
+    width: 100%;
+    border-radius: 5px 5px 0 0; 
+}
+
+.team-card{
+    text-align: center;
+    box-shadow: 0 0 10px 0 gray;
+    border-radius: 5px;
+}
+
+.team-card:hover{
+    box-shadow: 0 0 10px 0 steelblue;
+}
+
+.team-card h3{
+    margin-bottom: 0;
+}
+
+.team-card p{
+    color: #bfbfbf;
+    margin-top: 0;
+}
+
+.team-card h4{
+    color: #898989;
+    margin: 0px;
+}
+
+
+.team-card:hover h3{
+    color: steelblue;
+}
+
+
+/* stats */
+/*
+    #stats
+    karty mají stejnou šířku
+    maximální šířka karty: 300px
+    minimální mezera mezi kartami: 20px
+    velikost písma ikonky: 32px
+*/
+
+#stats{
+    border-top:1px dashed black;
+}
+
+#stats h3{
+    margin:auto;
+}
+
+#stats p{
+    color: #bfbfbf;
+}
+
+#stats .content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+    text-align: center;
+}
+
+.stats-card{
+    background-color: #4d4d4d;
+    border-radius: 5px;
+    margin: 0 35px 0 35px;
+}
+
+.stats-card:hover{
+    background-color:steelblue;
+}
+
+.stats-card i{
+    color: steelblue;
+    position: relative;
+    background-color: white;
+    border-radius: 100%;
+    padding: 8px;
+    transform: translateY(-25px);
+    font-size: 32px;
+}
+
+.stats-card p{
+    color: white;
+}
+
+.stats-card h3{
+    color: white;
+}
+
+
+/* price */
+/*
+#price
+šířka tabulka: 80%
+mezera mezi řádky 20px
+vycpávka řádku: 20px
+vycpávka tlačítka: 20px
+*/
+
+#price{
+    background-color: #f7f7f7;
+    
+}
+
+#price table{
+    width: 75%;
+}
+
+#price h2{
+    text-align: center;
+}
+
+#price .content table{
+    margin: auto;
+}
+
+#price thead{
+    text-align: left;
+}
+
+#price tbody tr{
+    color: #4d4d4d;
+}
+
+#price tr td{
+    border-bottom: dotted 1px #4d4d4d;
+    border-top: dotted 1px #4d4d4d;
+    padding: 5px;
+    
+}
+#price table{
+    border-spacing: 0px 20px;
+}
+
+#price ul li:first-child {
+    list-style-type: none;
+    margin-left: -20px;
+    font-weight: bold; 
+}
+
+#price button{
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 20px;
+    border: 2px solid steelblue;
+}
+
+#price button:hover{
+    background-color: steelblue;
+    color: white;
+}
+
+#price tbody tr:hover{
+    color: steelblue;
+    background-color: white;
+}
+
+
+/* refs */
+/*
+#refs
+karty mají stejnou šířku
+maximální šířka karty: 400px
+velikost obrázku: 60px
+*/
+
+#refs .content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+}
+
+#refs figure{
+    display: flex;
+    align-items: center;
+}
+
+.refs-card img{
+    border-radius: 50%;
+    width: 60px;
+    margin: 20px
+}
+
+blockquote{
+    background-color: #4d4d4d;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    line-height: 1.7;
+    padding: 5px;
+    
+}
+
+blockquote span::before{
+    content: "\201E";
+    font-family: Verdana;
+    font-size: 80px;
+    line-height: 15px;
+    color: steelblue;
+    transform: translateY(-20px);
+}
+
+blockquote span{
+    margin: 10px 15px 0 15px;
+    padding: 10px 0 10px 0;
+    display: flex;
+    grid-template-columns: 10% 90%;
+    color: white;
+}
+
+.refs-card{
+    max-width: 400px;
+}
+
+
+blockquote::after {
+    border-right: 10px solid transparent;
+    border-top: 10px solid #4d4d4d;
+    content: "";
+    transform: translateY(14px) translateX(55px);
+    width: 0px;    
+}
+
+#refs .refs-card:hover blockquote{
+    background-color: steelblue;
+}
+
+#refs .refs-card:hover span::before{
+    color: white;
+}
+
+#refs .refs-card:hover blockquote::after{
+    border-top: 10px solid steelblue;
+}
+
+#refs .refs-card:hover h3{
+    color: steelblue;
+}
+
+#refs h3{
+    color: #898989;
+    font-size: 15px
+}
+/* kontakty */
+/*
+#contact
+    výška mapy: 400px
+    mezera mezi vstupními položkami: 20px
+    vycpávka vstupních položek: 10px
+    text nevalidního vstupu: red
+    barva tlačítka po najetí kurzorem: green 10: #footer
+    horní a spodní odsazení sekce: 40px
+*/
+
+#contact{
+    
+    border-top:1px dashed black;
+}
+
+#contact h2{
+    text-transform: uppercase;
+    font-size: 40px;
+    
+}
+
+#contact .content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+}
+
+#contact h2{
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-radius: 5px;
+    grid-gap: 20px;
+    margin: 20px 0 20px 0;
+}
+
+*,*:focus,*:hover{
+    outline:none;
+}
+
+#contact-name:focus{
+     border: solid 2px green;
+}
+
+#contact-name{
+    grid-column: 1/2;
+    border: solid 2px steelblue;
+}
+
+
+#contact-email:focus{
+     border: solid 2px green;
+}
+
+
+#contact-email{
+    grid-column: 2/-1;
+    border: solid 2px steelblue;
+}
+
+#contact-subject:focus{
+     border: solid 2px green;
+}
+
+#contact-subject{
+    grid-column: 1/-1;
+    border: solid 2px steelblue;
+}
+
+#contact-message:focus{
+     border: solid 2px green;
+}
+
+#contact-message{
+    grid-column: 1/-1;
+    border: solid 2px steelblue;
+    color: steelblue;
+}
+
+#contact-submit{
+    grid-column: 1/-1;
+    width: 50%;
+    transform:translateX(50%);
+    color: white;
+    background-color: steelblue;
+    border: 0px;
+}
+
+input, textarea{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#map{
+    height: 400px;
+}
+
+input{
+        color: steelblue;
+} 
+
+input:invalid{
+    color: red;
+}
+
+#contact-submit:hover{
+    background-color: green;
+}
+
+
+
+/* footer */
+
+
+#footer {
+    padding: 50px 0px 50px 0px;
+    background-color: black;
+}
+
+#footer span{
+    color: #898989;
+}
+
+
+#footer a{
+    float: right;
+    color: steelblue;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    color: white;
+}
